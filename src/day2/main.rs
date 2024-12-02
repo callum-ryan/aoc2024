@@ -25,7 +25,7 @@ fn part1(lines: &Vec<Vec<i32>>) -> i32 {
             n_valid += 1;
         }
     }
-    n_valid as i32
+    n_valid
 }
 
 fn part2(lines: &Vec<Vec<i32>>) -> i32 {
@@ -44,10 +44,10 @@ fn part2(lines: &Vec<Vec<i32>>) -> i32 {
             }
         }
     }
-    n_valid as i32
+    n_valid
 }
 
-fn is_valid_sequence(seq: &Vec<i32>) -> bool {
+fn is_valid_sequence(seq: &[i32]) -> bool {
     let is_increasing = seq.windows(2).all(|x| x[1] > x[0]);
     let is_decreasing = seq.windows(2).all(|x| x[1] < x[0]);
     if is_decreasing || is_increasing {
